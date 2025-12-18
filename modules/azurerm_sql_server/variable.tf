@@ -8,6 +8,7 @@ variable "sql_server" {
     # sql_server_admin_login    = string
     # sql_server_admin_password = string
     minimum_tls_version       = string
+    public_network_access_enabled =bool
     tags                      = map(string)
     kv_name =string
     secret_name_username =string

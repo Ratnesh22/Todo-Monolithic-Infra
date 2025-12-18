@@ -52,9 +52,9 @@ depends_on = [ module.azurerm_resource_group ]
 source = "../../modules/azurerm_network_security_group"
 nsg =var.nsg
 }
-module "azurerm_bastion_host" {
+# module "azurerm_bastion_host" {
 
-depends_on = [ module.azurerm_networking_infra,module.azurerm_pip,module.azurerm_compute ]
-source = "../../modules/azurerm_bastion_host"
-host =var.host
-}
+# depends_on = [ module.azurerm_networking_infra,module.azurerm_pip,module.azurerm_compute ]
+# source = "../../modules/azurerm_bastion_host"
+# host =var.host
+# }

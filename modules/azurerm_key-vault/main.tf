@@ -12,6 +12,7 @@ resource "azurerm_key_vault" "kv" {
   soft_delete_retention_days  = each.value.soft_delete_retention_days
   purge_protection_enabled    = each.value.purge_protection_enabled
   sku_name = each.value.sku_name
+  rbac_authorization_enabled = each.value.rbac_authorization_enabled
 dynamic "access_policy" {
 
   for_each =each.value.access_policy
