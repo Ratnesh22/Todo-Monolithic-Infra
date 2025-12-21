@@ -83,4 +83,23 @@ resource "azurerm_linux_virtual_machine" "vm" {
       version   = source_image_reference.value.version
     }
   }
+
+custom_data = base64encode(<<EOF
+
+# Update packages
+sudo apt-get update -y
+
+# Install NGINX, Python3 and pip3
+sudo apt-get install -y nginx python3 python3-pip
+
+# Enable and start NGINX
+sudo systemctl enable nginx
+sudo systemctl start nginx
+
+# Upgrade pip
+sudo pip3 install --upgrade pip
+
+EOF
+)
+
 }
